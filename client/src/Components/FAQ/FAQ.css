@@ -1,0 +1,45 @@
+.FAQWrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.FAQ {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    overflow-y: scroll;
+}
+
+.FAQ::-webkit-scrollbar {
+    display: none;
+}
+
+.FAQTile {
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    background-color: gainsboro;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 30px 10px;
+}
+
+.FAQName {
+    font-size: 20px;
+    font-family: 'Quicksand';
+    font-weight: bolder;
+    color: #111;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #999;
+}
+
+.FAQMsg {
+    font-size: 18px;
+    font-family: 'Quicksand';
+    color: #111;
+}
