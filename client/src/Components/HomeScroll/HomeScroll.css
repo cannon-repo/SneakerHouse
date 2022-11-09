@@ -1,0 +1,62 @@
+.HomeScrollWrap {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.HomeScroll {
+    width: 100%;
+    max-width: 700px;
+    min-width: 320px;
+    height: 150px;
+    margin: 10px 0px;
+    display: flex;
+    overflow-x: scroll;
+    align-items: center;
+    border-top: 1px solid rgba(200,200,200,0.2);
+}
+
+.HomeScroll::-webkit-scrollbar {
+    display: none;
+}
+
+.ScrollArrow {
+    font-size: 30px;
+    color: gainsboro;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 700px) {
+    .HomeScroll {
+        max-width: 90%;
+    }
+}
+
+.ShoeTile {
+    width: 75px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    margin: 0px 20px;
+    cursor: pointer;
+}
+
+.ShoeTile img {
+    width: 75px;
+    height: 75px;
+    background-color: #fff;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 5px;
+}
+
+.ShoeTile p {
+    font-size: 14px;
+    color: #fff;
+    font-family: 'Quicksand';
+    font-weight: bolder;
+    text-align: center;
+}

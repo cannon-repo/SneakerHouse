@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&family=Quicksand&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+
+.SneakHouse {
+    width: 100%;
+    background-color: rgb(10,10,50);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ptr {
+    cursor: pointer;
+}
+
+*{
+    z-index: 2;
+    user-select: none;
+}

@@ -1,0 +1,148 @@
+.ShoesView {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.ShoesView::before {
+    content: 'PUMA';
+    font-size: 20vw;
+    font-family: 'Bungee';
+    color: rgba(100,100,100,0.1);
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: 90%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.HeroIntro {
+    width: 75%;
+    height: 100%;
+    display: flex;
+}
+
+.Wrap {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.HeroBrand {
+    font-size: 56px;
+    font-family: 'Quicksand';
+    color: orange;
+    font-weight: bolder;
+    letter-spacing: 2px;
+}
+
+.HeroModel {
+    font-size: 20px;
+    color: gainsboro;
+    font-family: 'Quicksand';
+    border-bottom: 2px solid rgba(255,255,255,0.2);
+}
+
+.AddToCart {
+    width: auto;
+    font-size: 16px;
+    font-family: 'Quicksand';
+    color: gainsboro;
+    margin-top: 50px;
+    font-weight: bolder;
+    border: 2px solid darkorange;
+    padding: 10px 20px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.CartIcon {
+    margin-left: 10px;
+}
+
+.HeroImgWrap {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.HeroImg {
+    background-image: url(../../../public/SneakerMain3.png);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 600px;
+    height: 400px;
+    z-index: 9;
+    animation: float 1.25s alternate infinite ease;
+}
+
+@keyframes float {
+    from {
+        transform: translateY(-40px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+
+.HeroInfo {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.HeroDesc {
+    font-size: 14px;
+    text-overflow: clip;
+    color: rgb(180,180,180);
+    font-family: 'Quicksand';
+    margin-right: 50px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(255,255,255,0.2);
+}
+
+.ColorsWrap, .SizesWrap {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.Colors, .Sizes {
+    display: flex;
+    margin-top: 10px;
+}
+
+.ColorTile, .SizeTile {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    border: 1px solid gainsboro;
+    margin-right: 50px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Quicksand';
+}
+
+.Price {
+    margin-top: 50px;
+}
