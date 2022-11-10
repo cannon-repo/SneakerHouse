@@ -4,7 +4,6 @@
     background-color: transparent;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
 }
 
 .ShoesView::before {
@@ -55,7 +54,7 @@
 }
 
 .AddToCart {
-    width: auto;
+    width: 200px;
     font-size: 16px;
     font-family: 'Quicksand';
     color: gainsboro;
@@ -146,4 +145,75 @@
 
 .Price {
     margin-top: 50px;
+}
+
+@media screen and (max-width: 1420px) {
+    .ShoesView {
+        flex-direction: column;
+        overflow-x: hidden;
+    }
+    .HeroIntro {
+        margin: auto auto;
+        margin-bottom: 50px;
+    }
+    .HeroInfo {
+        margin: auto auto;
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .ShoesView {
+        flex-direction: column;
+        overflow-x: hidden;
+    }
+    .HeroBrand {
+        font-size: 28px;
+    }
+    .HeroModel {
+        font-size: 20px;
+    }
+    .AddToCart {
+        font-size: 16px;
+    }
+    .HeroImg {
+        width: 400px;
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .ShoesView {
+        flex-direction: column;
+        overflow-x: hidden;
+    }
+    .HeroIntro {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .HeroImg {
+        margin-top: 100px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .ShoesView {
+        flex-direction: column;
+        overflow-x: hidden;
+    }
+    .HeroImg {
+        width: 90%;
+        height: 90%;
+        margin-bottom: 75px;
+        animation: floatSmall 2s alternate infinite ease;
+    }
+    @keyframes floatSmall {
+        from {
+            transform: translateY(-20px);
+        }
+        to {
+            transform: translateY(0px);
+        }
+    }
 }

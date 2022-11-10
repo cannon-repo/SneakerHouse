@@ -12,7 +12,7 @@ module.exports.postAddFAQ = async (req,res) => {
 
 module.exports.getAllFAQ = async (req,res) => {
     try {
-        const allFAQ = await FAQ.find();
+        const allFAQ = await FAQ.find().sort({_id: -1}).limit(20); // to get the latest 20 FAQ
         res.status(200).json({success: true, FAQ: allFAQ});
     } catch (err) {
         res.status(400).json({success: false, error: err});

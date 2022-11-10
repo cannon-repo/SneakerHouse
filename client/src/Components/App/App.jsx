@@ -21,7 +21,7 @@ const App = () => {
   return (
     <div className='SneakHouse' style={{height: height}}>
       <NavBar />
-      <div className='Content' style={{height: `${height - 70}px`}}>
+      <div className='Content' style={{height: `${height - 90}px`}}>
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/register" element={<Register/>}/>

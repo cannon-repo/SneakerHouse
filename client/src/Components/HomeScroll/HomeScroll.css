@@ -4,6 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    /* overflow: hidden; */
 }
 
 .HomeScroll {
@@ -28,9 +29,12 @@
     cursor: pointer;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 750px) {
+    .HomeScrollWrap {
+        width: 90%;
+    }
     .HomeScroll {
-        max-width: 90%;
+        max-width: 80%;
     }
 }
 

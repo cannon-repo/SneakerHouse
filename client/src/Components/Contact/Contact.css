@@ -139,3 +139,18 @@
     border-radius: 25px;
     padding: 10px 30px;
 }
+
+@media screen and (max-width: 800px) {
+    .ContactWrap {
+        flex-direction: column;
+    }
+    .RightDir {
+        display: none;
+    }
+    .ContactInfo {
+        height: 200px;
+    }
+    .ContactToFAQ p {
+        font-size: 26px;
+    }
+}
