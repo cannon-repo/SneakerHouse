@@ -22,6 +22,7 @@
 .FAQTile {
     width: 100%;
     max-width: 520px;
+    min-height: 150px;
     height: auto;
     background-color: gainsboro;
     border-radius: 10px;

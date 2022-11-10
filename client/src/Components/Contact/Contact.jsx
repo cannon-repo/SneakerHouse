@@ -13,6 +13,20 @@ const Contact = () => {
 
   const clickHandler = (e) => {
     e.preventDefault();
+    fetch('/api/faq/addFAQ', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({Name: name, Email: email, Message: msg})
+    }).then((res) => res.json()).then((data) => {
+      if(data.success) {
+        setName("");
+        setEmail("");
+        setMsg("");
+        alert('Sent Successfully');
+      } else {
+        alert(data.msg);
+      }
+    }).catch((err) => console.log(err));
   };
 
   return (
@@ -68,4 +82,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default React.memo(Contact);

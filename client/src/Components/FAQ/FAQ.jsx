@@ -1,7 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
+import { useEffect } from "react";
 import "./FAQ.css";
 
 const FAQ = () => {
+
+  const [faq, setFAQ] = useState([]);
+
+  useEffect(() => {
+    fetch('/api/faq/allFAQ').then((res) => res.json()).then((data) => {
+      if(data.success) {
+        setFAQ(data.FAQ);
+      } else {
+        alert('Failed to fetch FAQs');
+      }
+    })
+  }, [faq]);
+
   return (
     <div className="FAQWrap">
       <p
@@ -16,20 +30,17 @@ const FAQ = () => {
         FAQs
       </p>
       <div className="FAQ">
-        <div className="FAQTile">
-          <p className="FAQName">John Doe</p>
-          <p className="FAQMsg">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-            quidem, impedit voluptas, numquam, deleniti quaerat totam architecto
-            eius magnam blanditiis fugit reprehenderit aliquam velit expedita!
-            Quam provident cum quod non nulla atque a libero vel itaque, iste
-            quos, voluptate iusto voluptatum magni in et porro. Quod sunt
-            reiciendis excepturi incidunt?
-          </p>
-        </div>
+        {
+          faq.map((data, index) => {
+            return <div className="FAQTile" key={index}>
+              <p className="FAQName">{data.Name}</p>
+              <p className="FAQMsg">{data.Message}</p>
+            </div>
+          })
+        }
       </div>
     </div>
   );
 };
 
-export default FAQ;
+export default React.memo(FAQ);

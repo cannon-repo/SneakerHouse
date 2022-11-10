@@ -39,7 +39,7 @@
     color: #fff;
 }
 
-.LoginBtn {
+.LoginBtn, .LogoutBtn {
     color: #111;
     background-color: gainsboro;
     border-radius: 10px;
@@ -47,4 +47,11 @@
     font-weight: bolder;
     font-family: 'Poppins';
     padding: 5px 10px;
+}
+
+.NavActions {
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }

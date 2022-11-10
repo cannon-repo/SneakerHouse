@@ -4,16 +4,47 @@ import { BsPersonFill, BsPhone } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
 import { FaLock } from "react-icons/fa";
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
 
 const Register = () => {
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [pwd, setPwd] = useState("");
 
+  const [disabled, setDisabled] = useState(Boolean(true));
+
+  useEffect(() => {
+    if(name.length == 0 || phone.length != 10 || pwd.length < 6 || email.length == 0) {
+      setDisabled(true);
+      return;
+    }
+    setDisabled(false);
+  }, [name, phone, email, pwd]);
+
   const clickHandler = (e) => {
     e.preventDefault();
+    fetch('/api/user/register', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({Name: name, Phone: phone, Email: email, Pwd: pwd})
+    }).then((res) => res.json()).then((data) => {
+      if(data.success) {
+          navigate("/login");
+      } else {
+        alert(data.msg);
+      }
+    }).catch((err) => console.log(err));
+  }
+
+  const bgStyle = {
+    backgroundColor: disabled ? "gainsboro" : "orange"
   }
 
   return (
@@ -40,7 +71,7 @@ const Register = () => {
             <input
               onChange={(e) => setPhone(e.target.value)}
               type="tel"
-              placeholder="Phone"
+              placeholder="Phone(10 digit number)"
             />
           </div>
           <div className="InputWrap">
@@ -60,10 +91,10 @@ const Register = () => {
             <input
               onChange={(e) => setPwd(e.target.value)}
               type="password"
-              placeholder="Password"
+              placeholder="Password (min 6 length)"
             />
           </div>
-          <button onClick={(e) => clickHandler(e)} className="RegBtn">Register</button>
+          <button onClick={(e) => clickHandler(e)} className="RegBtn" style={bgStyle} disabled={disabled}>Register</button>
         </form>
         <p className="RegToLogin">Already have an account? <NavLink end to="/login">Login</NavLink></p>
       </div>
@@ -71,4 +102,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default React.memo(Register);

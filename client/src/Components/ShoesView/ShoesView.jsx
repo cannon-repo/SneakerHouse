@@ -66,4 +66,4 @@ const ShoesView = () => {
   );
 };
 
-export default ShoesView;
+export default React.memo(ShoesView);
